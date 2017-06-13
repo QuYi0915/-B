@@ -9,18 +9,16 @@
 
 html code：
 
-<code>
-  <div id="contentbox">
-    <div id="content" draggable="false">
-        <img src='images/$B3.png' draggable="false">
-        <img src='images/$B1.png' draggable="false">
-        <img src='images/$B2.png' draggable="false">
-        <img src='images/$B3.png' draggable="false">
-        <img src='images/$B1.png' draggable="false">
-    </div>
-    <div class="btn">
-        <button id="left">左</button><button id="right">右</button>
-    </div>
-  </div>
-</code>
+  #<div id="contentbox">
+  #  <div id="content" draggable="false">
+  #      <img src='images/$B3.png' draggable="false">
+  #      <img src='images/$B1.png' draggable="false">
+  #      <img src='images/$B2.png' draggable="false">
+  #     <img src='images/$B3.png' draggable="false">
+  #      <img src='images/$B1.png' draggable="false">
+  #  </div>
+  #  <div class="btn">
+  #      <button id="left">左</button><button id="right">右</button>
+  #  </div>
+  #</div>
 
