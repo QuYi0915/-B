@@ -73,7 +73,7 @@ html code：
 
 里面接收7个参数：
 
-contentBox  
+# contentBox
    
 string，配置外层容器，可以填写id，class，注意是jquery选择器的写法；
     
