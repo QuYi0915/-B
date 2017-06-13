@@ -75,7 +75,7 @@ html code：
 
    ```
     contentBox  
-   ````     
+   ```     
    
         string，配置外层容器，可以填写id，class，注意是jquery选择器的写法；
         
