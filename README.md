@@ -9,7 +9,7 @@
 
 html code：
 
-<!--
+
   <div id="contentbox">
     <div id="content" draggable="false">
         <img src='images/$B3.png' draggable="false">
@@ -22,4 +22,4 @@ html code：
         <button id="left">左</button><button id="right">右</button>
     </div>
 </div>
--->
+
