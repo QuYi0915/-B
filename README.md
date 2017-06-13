@@ -207,5 +207,6 @@ number，时间为毫秒，配置轮播图播放时间间隔，可选参数，�
         $B.clickRight();
     });
 </script>
+</html>
 
     
