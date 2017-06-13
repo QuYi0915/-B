@@ -20,5 +20,5 @@ html code：
     <div class="btn">
         <button id="left">左</button><button id="right">右</button>
     </div>
-</div>```
+</div>
 
