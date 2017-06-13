@@ -9,8 +9,8 @@
 
 html code：
 
-
-  <div id="contentbox">
+<code>
+  <div id="contentbox">
     <div id="content" draggable="false">
         <img src='images/$B3.png' draggable="false">
         <img src='images/$B1.png' draggable="false">
@@ -21,5 +21,6 @@ html code：
     <div class="btn">
         <button id="left">左</button><button id="right">右</button>
     </div>
-</div>
+  </div>
+</code>
 
