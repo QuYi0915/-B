@@ -9,7 +9,8 @@
 
 html code：
 
-```<div id="contentbox">
+```
+<div id="contentbox">
     <div id="content" draggable="false">
         <img src='images/$B3.png' draggable="false">
         <img src='images/$B1.png' draggable="false">
