@@ -48,4 +48,18 @@ html code：
 ```
 #从上面的code可以看出，轮播图的外层容器是id为contentbox的div，这个容器是轮播图的展示可视区域的大小；
 #然后里面的容器是id为content的div，这个容器装入5张图片，并且图片都是横向排列，
-# 这个时候就可以使用$B进行制作轮播图了！
+
+#这个时候就可以使用$B进行制作轮播图了！
+
+#调用$B.init()传入配置信息；
+```
+    $B.init({
+        contentBox:'#contentbox',  //配置外层容器
+        content:"#content",        //配置内层移动容器
+        infinity:true,              //是否开启循环
+        autoPlay:true,              //是否自动轮播
+        pcDrag:true,                //是否开启支持PC拖拽轮播
+        dragTime:400,               //滑动动画速度
+        moveTime:2000               //自动播放速度
+    });
+```
