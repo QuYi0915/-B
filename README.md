@@ -22,4 +22,5 @@ html code：
         <button id="left">左</button><button id="right">右</button>
     </div>
 </div>
-
+```
+#从上面的code可以看出，轮播图的外层容器是id为contentbox的div，这个容器是轮播图的展示可视区域的大小
