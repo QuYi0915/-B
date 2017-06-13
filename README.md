@@ -102,4 +102,110 @@ number，时间为毫秒，配置轮播图动作释放时的速度时间，可�
 number，时间为毫秒，配置轮播图播放时间间隔，可选参数，默认为3000；
 
 
+# 定义按钮操作轮播图左右切换；
+
+# $B.clickLeft()
+
+直接调用方法即可，轮播图会向右移动，显示左面的一张；
+
+# $B.clickRight()
+
+直接调用方法即可，轮播图会向左移动，显示右面的一张；
+
+
+# 效果
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>$B</title>
+    <style>
+        img {
+            width: 450px;
+            height: 250px;
+            float: left;
+        }
+
+        #contentbox {
+            width: 450px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            margin:auto;
+        }
+        #content {
+            width: 2250px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+        }
+        .btn{
+            width:450px;
+            margin:0 auto;
+            overflow: hidden;
+            position: absolute;
+            z-index: 2;
+            margin-top:95px;
+            border-radius: 50% 50%;
+        }
+        .btn button{
+            width:40px;
+            height:60px;
+            background-color:#0876E7;
+            color:#C7E8E8;
+            border:0;
+            font-size: 16px;
+            line-height: 60px;
+        }
+        .btn button:first-child{
+            float:left;
+        }
+        .btn button:last-child{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+<div id="contentbox">
+    <div id="content" draggable="false">
+        <img src='images/$B3.png' draggable="false">
+        <img src='images/$B1.png' draggable="false">
+        <img src='images/$B2.png' draggable="false">
+        <img src='images/$B3.png' draggable="false">
+        <img src='images/$B1.png' draggable="false">
+    </div>
+    <div class="btn">
+        <button id="left">左</button><button id="right">右</button>
+    </div>
+</div>
+</body>
+<script src='jquery-1.8.3.min.js'></script>
+<script src="$B.js"></script>
+<script>
+    var config={
+        contentBox:'#contentbox',  //配置外层容器
+        content:"#content",        //配置内层移动容器
+        infinity:true,              //是否开启循环
+        autoPlay:true,              //是否自动轮播
+        pcDrag:true,                //是否开启支持PC拖拽轮播
+        dragTime:400,               //滑动动画速度
+        moveTime:2000               //自动播放速度
+    };
+    $B.init({
+        contentBox:'#contentbox',  //配置外层容器
+        content:"#content",        //配置内层移动容器
+        infinity:true,              //是否开启循环
+        autoPlay:true,              //是否自动轮播
+        pcDrag:true,                //是否开启支持PC拖拽轮播
+        dragTime:400,               //滑动动画速度
+        moveTime:2000               //自动播放速度
+    });
+    $("#left").click(function(){
+        $B.clickLeft();
+    });
+    $("#right").click(function(){
+        $B.clickRight();
+    });
+</script>
+
     
