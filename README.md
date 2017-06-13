@@ -84,5 +84,22 @@ string，配置内层容器必须包括img轮播图，与contentBox一样为jque
 # infinity
 
 boolean，配置轮播图是否开始循环模式，可选参数，默认为false；注意：为保证轮播图的流畅，开启infinity必须在首长图片插入最后一张图片，在原本计划最后一张图片后插入第一张图片
-        
+
+# autoPlay
+
+boolean，配置轮播图是否自动播放，可选参数，默认为false；
+
+# pcDrag
+
+boolean，配置轮播图是否可以在PC端进行鼠标拖拽进行切换，可选参数，默认为false；
+
+# dragTime
+
+number，时间为毫秒，配置轮播图动作释放时的速度时间，可选参数，默认为500；
+
+# moveTime
+
+number，时间为毫秒，配置轮播图播放时间间隔，可选参数，默认为3000；
+
+
     
