@@ -15,6 +15,7 @@
     $B.isPcDrag = false;//是否开启pc滑动
     $B.time = 500;//动画时间切换下一张的速度时间；默认毫秒；
     $B.moveTime = 3000;//轮播的默认速度时间；
+    $B.callBack=null;//callback 执行动画后的回调函数，用于标记当前图片active样式；
     var OFF = true;//动画阻塞开关；
     $B.init = function (CONFIG) {
         $B.contentBox = $(CONFIG.contentBox);  //外容器          -----------配置项
@@ -25,6 +26,7 @@
         CONFIG.pcDrag ? $B.isPcDrag = true : $B.isPcDrag = false;      //-----------配置项
         CONFIG.dragTime && ($B.time = CONFIG.dragTime);      //-----------配置项
         CONFIG.moveTime && ($B.moveTime = CONFIG.moveTime);      //-----------配置项
+        (typeof (CONFIG.callBack)=='function') && ($B.callBack = CONFIG.callBack);      //-----------配置项
         $B.imgNumber = $B.content.find('img').length;              //有几张图片
         $B.imgWidth = $B.content.find('img')[0].offsetWidth;       //图片的宽度;
         $B.infinity && $B.content.css("left", -$B.imgWidth + "px");  //开启循环需要移动初始位置
@@ -89,6 +91,7 @@
     // 移动动画
     $B.animatemove = function animatemove() {
         // 开启轮播但不开启循环。默认只运行一次；
+        console.log($B.index);
         if (!$B.infinity && $B.index == $B.imgNumber) {
             $B.index = $B.imgNumber - 1;
             $B.stopPlay();
@@ -107,7 +110,8 @@
             _this.isinfinity();
             $B.bindEvent();
             OFF=true;
-        }, $B.time)
+            $B.callBack();
+        }, $B.time);
     };
     // 是否自动播放
     $B.autoPlay = function () {

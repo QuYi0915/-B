@@ -62,12 +62,16 @@
 
         }
         .msbtn ul li{
-            height:10px;
-            width:10px;
+            height:8px;
+            width:8px;
             margin-right:10px;
             float:left;
-            background-color:#0876E7;
+            background-color:#C7E8E8;
             border-radius: 5px;
+            border:1px solid #0876E7;
+        }
+        .msbtn ul li.active{
+            background-color:#0876E7;
         }
     </style>
 </head>
@@ -85,7 +89,7 @@
     </div>
     <div class="msbtn">
         <ul>
-            <li></li>
+            <li class="active"></li>
             <li></li>
             <li></li>
         </ul>
@@ -102,22 +106,26 @@
         autoPlay:true,              //是否自动轮播
         pcDrag:true,                //是否开启支持PC拖拽轮播
         dragTime:400,               //滑动动画速度
-        moveTime:2000               //自动播放速度
+        moveTime:2000,               //自动播放速度
+        callBack:function(){
+            $(".msbtn li").removeClass('active');
+            $(".msbtn li:eq("+($B.index-1)+")").addClass('active');
+        }
     };
-    $B.init({
-        contentBox:'#contentbox',  //配置外层容器
-        content:"#content",        //配置内层移动容器
-        infinity:true,              //是否开启循环
-        autoPlay:true,              //是否自动轮播
-        pcDrag:true,                //是否开启支持PC拖拽轮播
-        dragTime:400,               //滑动动画速度
-        moveTime:2000               //自动播放速度
-    });
+    $B.init(config);
     $("#left").click(function(){
         $B.clickLeft();
     });
     $("#right").click(function(){
         $B.clickRight();
     });
+    //点击按钮显示；
+    $(".msbtn li").each(function(i,val){
+        $(val).click(function(){
+            console.log($B.index);
+            $B.index=i+1;
+            $B.animatemove();
+        })
+    })
 </script>
 </html>
