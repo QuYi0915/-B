@@ -192,5 +192,5 @@ $B.init中允许传入一个callBack函数；callBack函数在轮播图每一次
 
 ```
 
-
+首先清除全部class，然后再指定标识轮播的元素上添加active样式；
 
