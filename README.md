@@ -117,5 +117,80 @@ number，时间为毫秒，配置轮播图播放时间间隔，可选参数，�
 
 下载code 执行index.html 即可
 # 进阶
+
 # 在需要点击轮播图标识符进行切换的时候可以采用修改$B.index来实现
+
+我们看下面这段代码
+
+html code:
+
+```
+
+    <div id="contentbox">
+        <div id="content" draggable="false">
+            <img src='images/$B3.png' draggable="false">
+            <img src='images/$B1.png' draggable="false">
+            <img src='images/$B2.png' draggable="false">
+            <img src='images/$B3.png' draggable="false">
+            <img src='images/$B1.png' draggable="false">
+        </div>
+        <div class="btn">
+            <button id="left">左</button><button id="right">右</button>
+        </div>
+        <div class="msbtn">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+```
+
+需要使用class为msbtn下面的li来实现标示轮播图的功能，这个时候就需要使用$B.index来进行标识
+
+js code:
+
+```
+
+    $(".msbtn li").each(function(i,val){
+        $(val).click(function(){
+            $B.index=i+1;
+            $B.animatemove();
+        })
+    })
+
+```
+
+使用jquery的each方法进行遍历绑定点击事件，由于开启了循环，首尾各有一张重复图片，所以这里要i+1；然后调用$B.animatemove()进行轮播图的移动；
+
+接下来实现下一个功能
+
+# 轮播图移动后的callBack；
+
+$B.init中允许传入一个callBack函数；callBack函数在轮播图每一次移动后调用，这样就可以满足通常的一个需求
+
+# 标识轮播图的元素进行active切换；
+
+```
+
+    var config={
+        contentBox:'#contentbox',  //配置外层容器
+        content:"#content",        //配置内层移动容器
+        infinity:true,              //是否开启循环
+        autoPlay:true,              //是否自动轮播
+        pcDrag:true,                //是否开启支持PC拖拽轮播
+        dragTime:400,               //滑动动画速度
+        moveTime:2000,               //自动播放速度
+        callBack:function(){
+            $(".msbtn li").removeClass('active');
+            $(".msbtn li:eq("+($B.index-1)+")").addClass('active');
+        }
+    };
+    $B.init(config);
+
+```
+
+
 
