@@ -91,7 +91,6 @@
     // 移动动画
     $B.animatemove = function animatemove() {
         // 开启轮播但不开启循环。默认只运行一次；
-        console.log($B.index);
         if (!$B.infinity && $B.index == $B.imgNumber) {
             $B.index = $B.imgNumber - 1;
             $B.stopPlay();
