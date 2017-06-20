@@ -1,7 +1,6 @@
 # $B
 支持PC拖动的轮播图，本插件依赖于jquery，请先引入jquery。
 
-<iframe src="./index.html"></iframe>
 
 #  快速上手
 
